@@ -17,11 +17,11 @@ export default function OneToDo({ todo }: OneToDoProps): JSX.Element {
     <Box display="flex" alignItems="center" justifyContent="space-between" p={2} borderWidth={1} borderRadius={5}>
       <Checkbox
         isChecked={todo.done}
-        onChange={() => toggleTodo(todo.id)}
+        onChange={() => void toggleTodo(todo.id)}
       >
         <Text as={todo.done ? 'del' : undefined}>{todo.todo}</Text>
       </Checkbox>
-      <Button colorScheme="red" onClick={() => deleteTodo(todo.id)}>
+      <Button colorScheme="red" onClick={() => void deleteTodo(todo.id)}>
         Delete
       </Button>
     </Box>
